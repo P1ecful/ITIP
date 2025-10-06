@@ -16,4 +16,12 @@ class cylinder extends figure {
     public float GetS() {
         return 2 * (float)Math.PI * radius * height;
     }
+
+    public void setHeight(float newHeight) {
+        this.height = newHeight;
+    }
+
+    public float getRadius() {
+        return radius;
+    }
 }

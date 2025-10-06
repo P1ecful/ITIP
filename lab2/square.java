@@ -5,6 +5,12 @@ class square extends figure {
     float length;
     float weidth;
 
+    static int squareCounter = 0;
+
+    public square() {
+        squareCounter++;
+    }
+
     public float GetV() {
         return height * length * weidth;
     }
