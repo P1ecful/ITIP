@@ -11,7 +11,6 @@ public class Orders {
 
     public void addOrder(int orderNumber, Order order) {
         orders.put(orderNumber, order);
-        System.out.println("Order " + orderNumber + " added.");
     }
 
     public Order getOrder(int orderNumber) {
@@ -21,19 +20,12 @@ public class Orders {
     public void removeOrder(int orderNumber) {
         if (orders.containsKey(orderNumber)) {
             orders.remove(orderNumber);
-            System.out.println("Order " + orderNumber + " removed.");
-        } else {
-            System.out.println("Order " + orderNumber + " not found.");
         }
     }
 
     public void displayOrders() {
-        if (orders.isEmpty()) {
-            System.out.println("No orders available.");
-        } else {
-            for (Integer orderNumber : orders.keySet()) {
-                System.out.println("Order number: " + orderNumber + ", Details: " + orders.get(orderNumber));
-            }
+        for (Integer orderNumber : orders.keySet()) {
+            System.out.println("Order number: " + orderNumber + ", Details: " + orders.get(orderNumber));
         }
     }
 }

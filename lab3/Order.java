@@ -35,14 +35,5 @@ class Order {
 
     public void setCost(double cost){
         this.cost = cost;
-    }  
-
-    @Override
-    public String toString() {
-        return "Order{" + 
-        "products=" + product + '\'' + 
-        ", deliver address=" + deliveryaddress + '\'' + 
-        ", cost=" + cost + 
-        '}';
     }
 }
