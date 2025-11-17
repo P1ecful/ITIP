@@ -5,7 +5,8 @@ public class FindStartsWith {
     public static void main(String[] args) {
         String text = "hello world hi";
 
-        Pattern pattern = Pattern.compile("h\\s*(\\w+)"); // Находит букву h, за которой следуют пробельные символы (0 или больше) и затем слово
+        // Находит букву h, за которой следуют пробельные символы (0 или больше) и затем слово
+        Pattern pattern = Pattern.compile("h\\s*(\\w+)");
         Matcher matcher = pattern.matcher(text);
 
         while (matcher.find()) {

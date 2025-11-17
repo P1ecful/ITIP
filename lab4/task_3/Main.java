@@ -1,9 +1,15 @@
 package task_3;
 
+import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
+import java.nio.file.Path;
+import java.util.Arrays;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
 
-        int[] ages = {-2, 10, 30, 121};
+        int[] ages = {10, 30, 121};
 
         for (int age : ages) {
             try {
@@ -16,8 +22,21 @@ public class Main {
 
     private static void checkAge(int age) {
         if (age < 0 || age > 120) {
-            throw new CustomAgeException();
+            try {
+                List<String> log = Arrays.asList(
+                    "Некорректный возраст: " + String.valueOf(age)
+                );
+
+                Files.write(Path.of("log.txt"), log);
+                throw new CustomAgeException();
+            
+            } catch (NoSuchFileException e) {
+                System.out.println("File not found");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
+
         System.out.println("Возраст коректный");
     }
 }

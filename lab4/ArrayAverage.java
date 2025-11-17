@@ -1,11 +1,30 @@
 public class ArrayAverage {
     public static void main(String[] args) {
-        int[] array = {1, 2, 3, 4, 5};
-        int sum = 0;
+        double sum = 0;
+
+        Object[] numbers = {
+            10.6,          
+            10.8f,          
+            10,           
+            10,           
+            "Hello",    
+        };
 
         try {
-            for (int i = 0; i < array.length+1; i++) {
-                sum += array[i];
+            for (int i = 0; i < numbers.length; i++) {
+                try {
+                    if (numbers[i] instanceof Integer){
+                        sum += (Integer) numbers[i];
+                    } else if (numbers[i] instanceof Double) {
+                        sum += (Double) numbers[i];
+                    } else if (numbers[i] instanceof Float) {
+                        sum += (Float) numbers[i];
+                    } else {
+                        throw new ClassCastException(numbers[i] + " не числовой тип");
+                    }
+                } catch (ClassCastException e) {
+                    System.out.println(e.getMessage());
+                }
             }
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Array Index Out Of Bounds");
@@ -13,7 +32,7 @@ public class ArrayAverage {
             System.out.println(e.getMessage());
         }
 
-        System.out.println(sum / array.length);
+        System.out.println(sum / numbers.length);
 
     }
-} 
+}
