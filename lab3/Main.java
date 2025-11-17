@@ -13,7 +13,6 @@ public class Main {
         System.out.println(table.size());       // Проверяем размер хешмапы
 
 
-
         // Задание 2
         System.out.println("Задание 2\n");
         Orders orders = new Orders();
