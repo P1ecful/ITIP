@@ -7,16 +7,10 @@ public class FindUpperAfterLower {
 
         String text = "asdsada dasd aADdsads asdaSds";
 
-        Pattern pattern = Pattern.compile("([a-z])([A-Z])");
+        Pattern pattern = Pattern.compile("([a-z])([A-Z])"); // Находит строчную букву, за которой сразу следует заглавная буква
         Matcher matcher = pattern.matcher(text);
 
-        StringBuffer sb = new StringBuffer();
-        while (matcher.find()) {
-            matcher.appendReplacement(sb, "!$1$2!");
-        }
-
-        matcher.appendTail(sb);
-        System.out.println(sb);
-
+        String result = matcher.replaceAll("!$1$2!");
+        System.out.println(result);
     }
 }

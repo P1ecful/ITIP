@@ -4,7 +4,7 @@ public class ArrayAverage {
         int sum = 0;
 
         try {
-            for (int i = 0; i < array.length; i++) {
+            for (int i = 0; i < array.length+1; i++) {
                 sum += array[i];
             }
         } catch (ArrayIndexOutOfBoundsException e) {
@@ -16,4 +16,4 @@ public class ArrayAverage {
         System.out.println(sum / array.length);
 
     }
-}
+} 
