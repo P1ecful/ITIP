@@ -1,3 +1,4 @@
+// Измененная версия, для изначальной смотреть прошлый коммит !!!!
 public class ArrayAverage {
     public static void main(String[] args) {
         double sum = 0;
