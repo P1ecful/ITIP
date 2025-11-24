@@ -1,6 +1,7 @@
 package lab3;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class Orders {
     private HashMap<Integer, Order> orders;
@@ -18,14 +19,12 @@ public class Orders {
     }
 
     public void removeOrder(int orderNumber) {
-        if (orders.containsKey(orderNumber)) {
-            orders.remove(orderNumber);
-        }
+        orders.remove(orderNumber);
     }
 
     public void displayOrders() {
-        for (Integer orderNumber : orders.keySet()) {
-            System.out.println("Order number: " + orderNumber + ", Details: " + orders.get(orderNumber));
-        }
+    for (Map.Entry<Integer, Order> entry : orders.entrySet()) {
+        System.out.println("Order number: " + entry.getKey() + ", Details: " + entry.getValue());
     }
+}
 }
