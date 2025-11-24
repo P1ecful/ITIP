@@ -11,6 +11,5 @@ public class PasswordValidation {
         Matcher matcher = pattern.matcher(password);
 
         System.out.println(matcher.matches());
-
-    }
+    } 
 }
